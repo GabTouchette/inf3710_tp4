@@ -23,9 +23,13 @@ export class RoomComponent implements OnInit {
   @ViewChild("newRoomType") newRoomType: ElementRef;
   @ViewChild("newRoomPrice") newRoomPrice: ElementRef;
 
-  public constructor(private communicationService: CommunicationService) {}
+  public constructor(private communicationService: CommunicationService) {
+    console.log('construct');
+    
+  }
 
   public ngOnInit(): void {
+    console.log('init');
     this.communicationService.getHotelPKs().subscribe((hotelPKs: HotelPK[]) => {
       this.hotelPKs = hotelPKs;
       this.selectedHotel = this.hotelPKs[0];

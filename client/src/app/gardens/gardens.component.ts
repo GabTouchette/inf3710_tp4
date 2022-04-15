@@ -5,11 +5,11 @@ import { Guest } from "../../../../common/tables/Guest";
 import { CommunicationService } from "../communication.service";
 
 @Component({
-  selector: "app-room",
-  templateUrl: "./guest.component.html",
-  styleUrls: ["./guest.component.css"],
+  selector: "app-gardens",
+  templateUrl: "./gardens.component.html",
+  styleUrls: ["./gardens.component.css"],
 })
-export class GuestComponent implements OnInit {
+export class GardensComponent implements OnInit {
   public hotelPKs: HotelPK[] = [];
   public rooms: Room[] = [];
   public guests: Guest[] = [];

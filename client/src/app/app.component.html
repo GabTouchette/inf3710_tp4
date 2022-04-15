@@ -1,20 +1,14 @@
-<nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand title" href="/">INF3710 - TP5</a>
-  <div class="navbar-expand mr-auto">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" routerLink="/hotels">Hotels</a>
-      <a class="nav-item nav-link active" routerLink="/rooms">Rooms</a>
-      <a class="nav-item nav-link active" routerLink="/guests">Guests</a>
-    </div>
-  </div>
+<nav>
+    <a routerLink="/gardens">Jardins</a>
+    <a routerLink="/add-plants">Ajouter</a>
+    <a routerLink="/modify-plants">Modifier</a>
 </nav>
 
-<div class="home" *ngIf="route == ''">
-  <p>
-    Welcome<br />to<br /><span class="hotel1">hotels</span
-    ><span class="hotel2">hotels</span><span class="hotel3">hotels</span>
-  </p>
-  <button type="button" class="btn" routerLink="/hotels">CHECK OUR HOTELS &#10140;</button>
+<div *ngIf="route === ''">
+    <div class="background">
+        <p class="title">Les jardins du <br> plateau Mont-Royal</p>
+    </div>
+    <img class="background-image" style="height: 100%;" src="./../assets/jardin.jpg" alt="jardin">
 </div>
 
-<router-outlet></router-outlet>
+<app-gardens *ngIf="route === '/gardens'"></app-gardens>
