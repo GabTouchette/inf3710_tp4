@@ -25,6 +25,42 @@ plantTypes: PlantType[];
       establishmentPeriod: '2 years',
       comment: 'bad plant'
     });
+    this.plantTypes.push({
+      name: 'flower',
+      marketDate: new Date(),
+      isBio: true,
+      seedlingDescription: 'very terrible',
+      plantingDescription: 'hard af to plant',
+      maintenance: 'no',
+      harvesting: 'no',
+      harvestPeriod: 'long',
+      establishmentPeriod: '2 years',
+      comment: 'bad plant'
+    });
+    this.plantTypes.push({
+      name: 'flower',
+      marketDate: new Date(),
+      isBio: true,
+      seedlingDescription: 'very terrible',
+      plantingDescription: 'hard af to plant',
+      maintenance: 'no',
+      harvesting: 'no',
+      harvestPeriod: 'long',
+      establishmentPeriod: '2 years',
+      comment: 'bad plant'
+    });
+    this.plantTypes.push({
+      name: 'flower',
+      marketDate: new Date(),
+      isBio: true,
+      seedlingDescription: 'very terrible',
+      plantingDescription: 'hard af to plant',
+      maintenance: 'no',
+      harvesting: 'no',
+      harvestPeriod: 'long',
+      establishmentPeriod: '2 years',
+      comment: 'bad plant'
+    });
   }
 
 }
