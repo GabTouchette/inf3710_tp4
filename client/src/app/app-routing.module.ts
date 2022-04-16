@@ -1,16 +1,18 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { Add } from "./add-page/add.component";
 
 import { AppComponent } from "./app.component";
-import { HotelComponent } from "./hotel/hotel.component";
-import { RoomComponent } from "./room/room.component";
-import { GuestComponent } from "./guest/guest.component";
+import { GardensComponent } from "./gardens-page/gardens.component";
+import { Modify } from "./modify-page/modify.component";
+import { Search } from "./search-page/search.component";
 
 const routes: Routes = [
   { path: "app", component: AppComponent },
-  { path: "rooms", component: RoomComponent },
-  { path: "hotels", component: HotelComponent },
-  { path: "guests", component: GuestComponent },
+  { path: "gardens", component: GardensComponent },
+  { path: "modify", component: Modify },
+  { path: "search", component: Search },
+  { path: "add", component: Add },
 ];
 
 @NgModule({

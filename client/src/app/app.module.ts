@@ -3,19 +3,21 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
+import { Add } from "./add-page/add.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { CommunicationService } from "./communication.service";
-import { GuestComponent } from "./guest/guest.component";
-import { HotelComponent } from "./hotel/hotel.component";
-import { RoomComponent } from "./room/room.component";
+import { GardensComponent } from "./gardens-page/gardens.component";
+import { Modify } from "./modify-page/modify.component";
+import { Search } from "./search-page/search.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    RoomComponent,
-    HotelComponent,
-    GuestComponent,
+    GardensComponent,
+    Modify,
+    Search,
+    Add
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,76 @@
+.main-container {
+    padding: 150px 100px 0px 100px;
+    height: 100%;
+}
+
+.divider {
+    border-width: 2px;
+    border-color: rgb(0, 0, 0);
+}
+
+.table-container {
+    display: grid;
+    grid-template: auto / auto auto auto;
+    grid-gap: 25px;
+}
+
+table {
+    width: 100%;
+    border: 2px solid black;
+}
+
+td,
+th {
+    border: 2px solid black;
+    text-align: left;
+    padding: 8px;
+    text-transform: capitalize;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+th {
+    font-size: 22pt;
+    font-weight: 700;
+    letter-spacing: 2px;
+    background-color: black;
+    color: white;
+    opacity: 0.75;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+input {
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 6px;
+    height: 40px;
+    padding-left: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 6px;
+    height: 100px;
+    padding: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.button-container>button {
+    font-size: 12pt;
+    height: 40px;
+    width: 120px;
+    color: white;
+    background-color: transparent;
+    font-weight: 600;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin-left: 15px;
+}

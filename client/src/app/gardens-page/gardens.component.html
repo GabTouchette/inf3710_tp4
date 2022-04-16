@@ -1,0 +1,40 @@
+<div class="main-container">
+    <h1>Liste des jardins</h1>
+
+    <hr class="divider">
+
+    <div class="sub-container">
+        <div class="gardens-container">
+            <div *ngFor="let garden of gardens" class="garden-card" (click)="setSelectionAs(garden)">
+                <div>
+                    <h3>{{garden.name}}</h3>
+                    <h4>ID: {{garden._id}}</h4>
+                    <h4>Superficie: {{garden.area}} m2</h4>
+                </div>
+
+            </div>
+        </div>
+        <div class="info-container">
+            <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 20px;">
+                <p class="garden-info-title">{{selectedGarden.name}}</p>
+            </div>
+
+
+            <div *ngFor="let parcel of selectedGarden.parcels" style="padding: 10px 15px; border-top: 4px solid;">
+                <p class="parcel-title">Parcelle</p>
+                <p>Dimensions: {{parcel.dimensions}}</p>
+
+                <div *ngFor="let row of parcel.rows" style="padding: 10px 15px; border-top: 2px solid black;">
+                    <p class="row-title">Rang #{{row.number}}</p>
+                    <p>Coordonnées: {{row.coords[0]}}, {{row.coords[1]}}</p>
+
+                    <div *ngFor="let plantType of row.plantTypes" style="padding: 10px 15px;">
+                        <p class="plant-type-title">Variété: {{plantType.name}}</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
