@@ -1,7 +1,9 @@
 <nav>
+    <i *ngIf="route !== ''" class="back-arrow" routerLink="/"><</i>
     <a routerLink="/gardens">Jardins</a>
-    <a routerLink="/add-plants">Ajouter</a>
-    <a routerLink="/modify-plants">Modifier</a>
+    <a routerLink="/add">Ajouter</a>
+    <a routerLink="/modify">Modifier</a>
+    <a routerLink="/search">Rechercher</a>
 </nav>
 
 <div *ngIf="route === ''">
@@ -11,4 +13,4 @@
     <img class="background-image" style="height: 100%;" src="./../assets/jardin.jpg" alt="jardin">
 </div>
 
-<app-gardens *ngIf="route === '/gardens'"></app-gardens>
+<router-outlet></router-outlet>

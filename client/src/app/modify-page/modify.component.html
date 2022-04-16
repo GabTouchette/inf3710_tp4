@@ -1,0 +1,82 @@
+<div class="main-container">
+    <h1>Modifier une variété</h1>
+
+    <hr class="divider">
+
+    <div class="sub-container">
+        <div class="table-container">
+            <table *ngFor="let plantType of plantTypes">
+                <thead>
+                    <tr>
+                        <th colspan="2">
+                            <div style="display:flex; justify-content:space-between;">
+                                {{plantType.name}}
+                                <div class="button-container">
+                                    <button>Sauvegarder</button>
+                                    <button>Supprimer</button>
+                                </div>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Date de mise en marché</td>
+                        <td>
+                            <input type="text" [(ngModel)]="plantType.marketDate">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Biologique</td>
+                        <td>
+                            <input type="text" [(ngModel)]="plantType.isBio">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Semis</td>
+                        <td>
+                            <input type="text" [(ngModel)]="plantType.seedlingDescription">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>plantation</td>
+                        <td>
+                            <input type="text" [(ngModel)]="plantType.plantingDescription">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>maintenance</td>
+                        <td>
+                            <input type="text" [(ngModel)]="plantType.maintenance">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>récolte</td>
+                        <td>
+                            <input type="text" [(ngModel)]="plantType.harvesting">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>periode de mise en place</td>
+                        <td>
+                            <input type=" text " [(ngModel)]="plantType.establishmentPeriod">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>periode de recolte</td>
+                        <td>
+                            <input type="text " [(ngModel)]="plantType.harvestPeriod">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Commentaire general</td>
+                        <td>
+                            <textarea type="text" [(ngModel)]="plantType.comment"></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

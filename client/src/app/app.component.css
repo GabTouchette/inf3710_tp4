@@ -58,3 +58,17 @@ nav a:hover {
     letter-spacing: 3px;
     text-transform: uppercase;
 }
+
+.back-arrow {
+    color: white;
+    font-size: 50pt;
+    font-weight: 600;
+    position: absolute;
+    left: 2%;
+    top: -10%;
+}
+
+.back-arrow:hover {
+    cursor: pointer;
+    left: 1.7%;
+}
