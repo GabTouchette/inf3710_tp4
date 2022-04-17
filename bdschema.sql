@@ -17,6 +17,7 @@ CREATE TABLE Parcelle(
 	idParcelle SERIAL,
 	idJardin INT,
 	coordonnees VARCHAR(20) NOT NULL,
+	dimensions VARCHAR(20) NOT NULL,
 	PRIMARY KEY(idParcelle),
 	FOREIGN KEY(idJardin) references Jardins(idJardin) ON DELETE CASCADE ON UPDATE CASCADE
 );
