@@ -16,6 +16,12 @@ INSERT INTO Rang (idParcelle ,numero ,coordonnees,debutJachere,finJachere  ) VAL
 INSERT INTO Rang (idParcelle ,numero ,coordonnees,debutJachere,finJachere  ) VALUES ( 1, 2, 'quadrant inférieur',DATE'2022-07-01',DATE'2022-10-01'); 
 INSERT INTO Rang (idParcelle ,numero ,coordonnees,debutJachere,finJachere  ) VALUES ( 2, 1, 'quadrant supérieur',DATE'2022-05-01',DATE'2022-09-01'); 
 INSERT INTO Rang (idParcelle ,numero ,coordonnees,debutJachere,finJachere  ) VALUES ( 2, 2, 'quadrant inférieur',DATE'2022-09-01',DATE'2022-12-01'); 
+INSERT INTO Rang (idParcelle ,numero ,coordonnees,debutJachere,finJachere  ) VALUES ( 2, 3, 'quadrant inférieur',DATE'2022-09-01',DATE'2022-12-01'); 
+INSERT INTO Rang (idParcelle ,numero ,coordonnees,debutJachere,finJachere  ) VALUES ( 3, 1, 'quadrant inférieur',DATE'2022-09-01',DATE'2022-12-01'); 
+INSERT INTO Rang (idParcelle ,numero ,coordonnees,debutJachere,finJachere  ) VALUES ( 4, 1, 'quadrant inférieur',DATE'2022-09-01',DATE'2022-12-01'); 
+INSERT INTO Rang (idParcelle ,numero ,coordonnees,debutJachere,finJachere  ) VALUES ( 5, 1, 'quadrant inférieur',DATE'2022-09-01',DATE'2022-12-01'); 
+INSERT INTO Rang (idParcelle ,numero ,coordonnees,debutJachere,finJachere  ) VALUES ( 5, 2, 'quadrant inférieur',DATE'2022-09-01',DATE'2022-12-01'); 
+INSERT INTO Rang (idParcelle ,numero ,coordonnees,debutJachere,finJachere  ) VALUES ( 6, 1, 'quadrant inférieur',DATE'2022-09-01',DATE'2022-12-01'); 
 
 INSERT INTO Variete VALUES ('VARIETE A', DATE'2019-01-01','Il faut planter cette graine dans le sol','Planter 3 pouces sous le sol, arroser abondament dans la premiere heure',
 						   'Arroser 3 fois semaines, couper les feuilles mortes','Arracher la plante à ca racine pour la récolte',DATE'2022-08-01',DATE'2022-09-01',DATE'2022-10-01'
@@ -32,9 +38,11 @@ INSERT INTO Variete VALUES ('VARIETE F', DATE'2020-10-01','Il faut planter cette
 						   ,DATE'2023-03-01','Assurer vous que la plante ne soit pas trop exposé à de haute chaleure');
 						   
 INSERT INTO VarieteRang VALUES ('VARIETE A', 1,'plant');
+INSERT INTO VarieteRang VALUES ('VARIETE B', 1,'plant');
 INSERT INTO VarieteRang VALUES ('VARIETE B', 2,'semis');
 INSERT INTO VarieteRang VALUES ('VARIETE C', 3,'greffe');
-INSERT INTO VarieteRang VALUES ('VARIETE F', 4,'plant');
+INSERT INTO VarieteRang VALUES ('VARIETE A', 3,'greffe');
+INSERT INTO VarieteRang VALUES ('VARIETE C', 4,'plant');
 INSERT INTO Plante VALUES ('Plante A','PlantosA','racine','arbre fruitier','fruit a noyau','VARIETE A');
 INSERT INTO Plante VALUES ('Plante B','tuberosum','fleur','herbes','fleur ouverte','VARIETE B');
 INSERT INTO Plante VALUES ('Fougère','Polypodiopsida','plante','herbes','plante vasculaire','VARIETE C');

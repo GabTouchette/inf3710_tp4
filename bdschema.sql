@@ -1,6 +1,6 @@
-SET search_path = jardinCommunautaire;
 DROP SCHEMA IF EXISTS jardinCommunautaire CASCADE;
 CREATE SCHEMA jardinCommunautaire;
+SET search_path = jardinCommunautaire;
 
 
 CREATE TABLE IF NOT EXISTS Jardins(
