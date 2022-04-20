@@ -5,6 +5,24 @@
 
     <div class="sub-container">
         <input type="text" name="search-bar" placeholder="Rechercher..." [(ngModel)]="searchFilter" (input)="applySearchFilter()">
+
+        <div class="plantContainer">
+            <div *ngFor="let plant of plantsWithFilter" class="plantCard">
+                <div>
+                    <div class="plant-title">{{ plant.name }}</div>
+                    <div class="plant-info">Nom latin: {{ plant.latinName }}</div>
+                    <div class="plant-info">Categorie: {{ plant.category }}</div>
+                    <div class="plant-info">Type: {{ plant.type }}</div>
+                    <div class="plant-info">Sous-type: {{ plant.subType }}</div>
+                    <div class="plant-info">Variete: {{ plant.plantType }}</div>
+                    <div class="plant-info">Menaces: </div>
+                    <div *ngFor="let menace of plant.menaces">
+                        <div class="plant-menace-info">Description: {{ menace.description }}</div>
+                        <div class="plant-menace-info">Solutions: {{ menace.solutions }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>
