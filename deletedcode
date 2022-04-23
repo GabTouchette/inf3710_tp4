@@ -1,0 +1,267 @@
+// ======= HOTEL ROUTES =======
+// ex http://localhost:3000/database/hotel?hotelNb=3&name=LeGrandHotel&city=laval
+router.get("/variete", (req: Request, res: Response, _: NextFunction) => {
+  var name = req.query.name ? req.query.name : "";
+  var dateMiseEnMarche = req.query.dateMiseEnMarche ? req.query.dateMiseEnMarche : "";
+  var semis = req.query.semis ? req.query.semis : "";
+  var plantation = req.query.plantation ? req.query.plantation : "";
+  var entretion = req.query.entretion ? req.query.entretion : "";
+  var recolte = req.query.recolte ? req.query.recolte : "";
+  var debutMiseEnPlace = req.query.debutMiseEnPlace ? req.query.debutMiseEnPlace : "";
+  var finMiseEnPlace = req.query.finMiseEnPlace ? req.query.finMiseEnPlace : "";
+  var debutRecolte = req.query.debutRecolte ? req.query.debutRecolte : "";
+  var finRecolte = req.query.finRecolte ? req.query.finRecolte : "";
+  var commentaire = req.query.commentaire ? req.query.commentaire : "";
+  this.databaseService
+  .filterVarietes(name, dateMiseEnMarche, semis,
+    plantation, entretion, recolte,
+    debutMiseEnPlace, finMiseEnPlace,
+    debutRecolte, finRecolte,
+     commentaire)
+    .then((result: pg.QueryResult) => {
+      const hotels: Hotel[] = result.rows.map((hotel: Hotel) => ({
+        hotelnb: hotel.hotelnb,
+        name: hotel.name,
+        city: hotel.city,
+      }));
+      res.json(hotels);
+    })
+    .catch((e: Error) => {
+      console.error(e.stack);
+    });
+});
+
+
+// const varietes: Variete[] = result.rows.map((variete: Variete) => ({
+//   name: variete.name,
+//   dateMiseEnMarche: variete.dateMiseEnMarche,
+//   semis: variete.semis,
+//   plantation: variete.plantation,
+//   entretion: variete.entretion,
+//   recolte: variete.recolte,
+//   debutMiseEnPlace: variete.debutMiseEnPlace,
+//   finMiseEnPlace: variete.finMiseEnPlace,
+//   debutRecolte: variete.debutRecolte,
+//   finRecolte: variete.finRecolte ,
+//   commentaire: variete.commentaire
+// }));
+
+
+
+router.post(
+  "/jardins", (req: Request, res: Response, _: NextFunction) => {
+    var varieteName = req.query.name ? req.query.name : "";
+    var varieteMarketDate = req.query.marketDate ? req.query.marketDate : "";
+    var varieteIsBio = req.query.isBio ? req.query.isBio : "";
+    var varieteSeedlingDescription = req.query.seedlingDescription ? req.query.seedlingDescription : "";
+    var varietePlantingDescription = req.query.plantingDescription ? req.query.plantingDescription : "";
+    var varieteMaintenance = req.query.maintenance ? req.query.maintenance : "";
+    var varieteHarvesting = req.query.harvesting ? req.query.harvesting : "";
+    var varieteEstablishmentPeriod = req.query.establishmentPeriod ? req.query.establishmentPeriod : "";
+    var varieteHarvestPeriod = req.query.harvestPeriod ? req.query.harvestPeriod : "";
+    var varieteComment = req.query.comment ? req.query.comment : "";
+    console.log("Here");
+
+    this.databaseService
+      .createVariete(varieteName, varieteMarketDate, varieteIsBio,
+          varieteSeedlingDescription, varietePlantingDescription,varieteMaintenance,
+          varieteHarvesting, varieteEstablishmentPeriod, varieteHarvestPeriod, varieteComment)
+      .then((result: pg.QueryResult) => {
+        res.json(result.rowCount);
+      })
+      .catch((e: Error) => {
+        console.error(e.stack);
+        res.json(-1);
+      });
+  }
+);
+
+//
+router.put(
+  "/hotels/update",
+  (req: Request, res: Response, _: NextFunction) => {
+    const hotel: Hotel = {
+      hotelnb: req.body.hotelnb,
+      name: req.body.name ? req.body.name : "",
+      city: req.body.city ? req.body.city : "",
+    };
+
+    this.databaseService
+      .updateHotel(hotel)
+      .then((result: pg.QueryResult) => {
+        res.json(result.rowCount);
+      })
+      .catch((e: Error) => {
+        console.error(e.stack);
+      });
+  }
+);
+
+this.plants.push({
+  name: "pomier",
+  latinName: "Pomius Arbus",
+  category: "plante a fruits",
+  type: "",
+  subType: "",
+  plantType: "Arbre",
+  menaces: [
+    {
+      description: "ratons qui mangent les pommes",
+      solutions: "poison contre les ratons",
+    },
+  ],
+});
+this.plants.push({
+  name: "pomier",
+  latinName: "Pomius Arbus",
+  category: "plante a fruits",
+  type: "",
+  subType: "",
+  plantType: "Arbre",
+  menaces: [
+    {
+      description: "ratons qui mangent les pommes",
+      solutions: "poison contre les ratons",
+    },
+  ],
+});
+this.plants.push({
+  name: "pomier",
+  latinName: "Pomius Arbus",
+  category: "plante a fruits",
+  type: "",
+  subType: "",
+  plantType: "Arbre",
+  menaces: [
+    {
+      description: "ratons qui mangent les pommes",
+      solutions: "poison contre les ratons",
+    },
+  ],
+});
+this.plants.push({
+  name: "pomier",
+  latinName: "Pomius Arbus",
+  category: "plante a fruits",
+  type: "",
+  subType: "",
+  plantType: "Arbre",
+  menaces: [
+    {
+      description: "ratons qui mangent les pommes",
+      solutions: "poison contre les ratons",
+    },
+  ],
+});
+this.plants.push({
+  name: "pomier",
+  latinName: "Pomius Arbus",
+  category: "plante a fruits",
+  type: "",
+  subType: "",
+  plantType: "Arbre",
+  menaces: [
+    {
+      description: "ratons qui mangent les pommes",
+      solutions: "poison contre les ratons",
+    },
+  ],
+});
+this.plants.push({
+  name: "pomier",
+  latinName: "Pomius Arbus",
+  category: "plante a fruits",
+  type: "",
+  subType: "",
+  plantType: "Arbre",
+  menaces: [
+    {
+      description: "ratons qui mangent les pommes",
+      solutions: "poison contre les ratons",
+    },
+  ],
+});
+this.plants.push({
+  name: "pomier",
+  latinName: "Pomius Arbus",
+  category: "plante a fruits",
+  type: "",
+  subType: "",
+  plantType: "Arbre",
+  menaces: [
+    {
+      description: "ratons qui mangent les pommes",
+      solutions: "poison contre les ratons",
+    },
+  ],
+});
+this.plants.push({
+  name: "pomier",
+  latinName: "Pomius Arbus",
+  category: "plante a fruits",
+  type: "",
+  subType: "",
+  plantType: "Arbre",
+  menaces: [
+    {
+      description: "ratons qui mangent les pommes",
+      solutions: "poison contre les ratons",
+    },
+  ],
+});
+this.plants.push({
+  name: "pomier",
+  latinName: "Pomius Arbus",
+  category: "plante a fruits",
+  type: "",
+  subType: "",
+  plantType: "Arbre",
+  menaces: [
+    {
+      description: "ratons qui mangent les pommes",
+      solutions: "poison contre les ratons",
+    },
+  ],
+});
+this.plants.push({
+  name: "pomier",
+  latinName: "Pomius Arbus",
+  category: "plante a fruits",
+  type: "",
+  subType: "",
+  plantType: "Arbre",
+  menaces: [
+    {
+      description: "ratons qui mangent les pommes",
+      solutions: "poison contre les ratons",
+    },
+  ],
+});
+this.plants.push({
+  name: "pomier",
+  latinName: "Pomius Arbus",
+  category: "plante a fruits",
+  type: "",
+  subType: "",
+  plantType: "Arbre",
+  menaces: [
+    {
+      description: "ratons qui mangent les pommes",
+      solutions: "poison contre les ratons",
+    },
+  ],
+});
+this.plants.push({
+  name: "pomier",
+  latinName: "Pomius Arbus",
+  category: "plante a fruits",
+  type: "",
+  subType: "",
+  plantType: "Arbre",
+  menaces: [
+    {
+      description: "ratons qui mangent les pommes",
+      solutions: "poison contre les ratons",
+    },
+  ],
+});

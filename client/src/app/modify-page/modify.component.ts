@@ -1,5 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { PlantType } from "../../../../common/interfaces/plant-type.interface";
+import { Variete } from "../../../../common/interfaces/variete.interface";
+
+
+// import { CommunicationService } from "../communication.service";
 
 @Component({
   selector: "app-gardens",
@@ -7,60 +10,68 @@ import { PlantType } from "../../../../common/interfaces/plant-type.interface";
   styleUrls: ["./modify.component.css"],
 })
 export class Modify implements OnInit {
-plantTypes: PlantType[];
 
-  public constructor() {}
+varietes: Variete[];
+
+  public constructor( ) { //private readonly communicationService:CommunicationService
+    //
+    // this.communicationService= communicationService;
+  }
 
   public ngOnInit(): void {
-    this.plantTypes = [];
-    this.plantTypes.push({
+    this.varietes = [];
+
+    this.varietes.push({
       name: 'flower',
-      marketDate: new Date(),
-      isBio: true,
-      seedlingDescription: 'very terrible',
-      plantingDescription: 'hard af to plant',
-      maintenance: 'no',
-      harvesting: 'no',
-      harvestPeriod: 'long',
-      establishmentPeriod: '2 years',
-      comment: 'bad plant'
+      dateMiseEnMarche: new Date(),
+      semis: 'very terrible',
+      plantation: 'hard af to plant',
+      entretion: 'no',
+      recolte: 'no',
+      debutMiseEnPlace: new Date(),
+      finMiseEnPlace: new Date(),
+      debutRecolte: new Date(),
+      finRecolte: new Date(),
+      commentaire: 'bad plant'
     });
-    this.plantTypes.push({
-      name: 'flower',
-      marketDate: new Date(),
-      isBio: true,
-      seedlingDescription: 'very terrible',
-      plantingDescription: 'hard af to plant',
-      maintenance: 'no',
-      harvesting: 'no',
-      harvestPeriod: 'long',
-      establishmentPeriod: '2 years',
-      comment: 'bad plant'
-    });
-    this.plantTypes.push({
-      name: 'flower',
-      marketDate: new Date(),
-      isBio: true,
-      seedlingDescription: 'very terrible',
-      plantingDescription: 'hard af to plant',
-      maintenance: 'no',
-      harvesting: 'no',
-      harvestPeriod: 'long',
-      establishmentPeriod: '2 years',
-      comment: 'bad plant'
-    });
-    this.plantTypes.push({
-      name: 'flower',
-      marketDate: new Date(),
-      isBio: true,
-      seedlingDescription: 'very terrible',
-      plantingDescription: 'hard af to plant',
-      maintenance: 'no',
-      harvesting: 'no',
-      harvestPeriod: 'long',
-      establishmentPeriod: '2 years',
-      comment: 'bad plant'
-    });
+
+
+    // this.varietes.push({
+    //   name: 'flower',
+    //   marketDate: new Date(),
+    //   isBio: true,
+    //   seedlingDescription: 'very terrible',
+    //   plantingDescription: 'hard af to plant',
+    //   maintenance: 'no',
+    //   harvesting: 'no',
+    //   harvestPeriod: 'long',
+    //   establishmentPeriod: '2 years',
+    //   comment: 'bad plant'
+    // });
+    // this.varietes.push({
+    //   name: 'flower',
+    //   marketDate: new Date(),
+    //   isBio: true,
+    //   seedlingDescription: 'very terrible',
+    //   plantingDescription: 'hard af to plant',
+    //   maintenance: 'no',
+    //   harvesting: 'no',
+    //   harvestPeriod: 'long',
+    //   establishmentPeriod: '2 years',
+    //   comment: 'bad plant'
+    // });
+    // this.varietes.push({
+    //   name: 'flower',
+    //   marketDate: new Date(),
+    //   isBio: true,
+    //   seedlingDescription: 'very terrible',
+    //   plantingDescription: 'hard af to plant',
+    //   maintenance: 'no',
+    //   harvesting: 'no',
+    //   harvestPeriod: 'long',
+    //   establishmentPeriod: '2 years',
+    //   comment: 'bad plant'
+    // });
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { PlantType } from "../../../../common/interfaces/plant-type.interface";
+import { Variete } from "../../../../common/interfaces/variete.interface";
 
 @Component({
   selector: "app-add",
@@ -7,22 +7,23 @@ import { PlantType } from "../../../../common/interfaces/plant-type.interface";
   styleUrls: ["./add.component.css"],
 })
 export class Add implements OnInit {
-  newPlantType: PlantType;
+  newVariete: Variete;
 
   public constructor() {}
 
   public ngOnInit(): void {
-    this.newPlantType = {
+    this.newVariete = {
       name: '',
-      marketDate: new Date(),
-      isBio: false,
-      seedlingDescription: '',
-      plantingDescription: '',
-      maintenance: '',
-      harvesting: '',
-      harvestPeriod: '',
-      establishmentPeriod: '',
-      comment: ''
+      dateMiseEnMarche: new Date(),
+      semis: '',
+      plantation: '',
+      entretion: '',
+      recolte: '',
+      debutMiseEnPlace: new Date(),
+      finMiseEnPlace: new Date(),
+      debutRecolte: new Date(),
+      finRecolte: new Date(),
+      commentaire: '',
     };
   }
 

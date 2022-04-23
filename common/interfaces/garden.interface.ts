@@ -1,8 +1,13 @@
 import {Parcel} from "./parcel.interface";
 
 export interface Garden {
-    _id: string;
-    name: string;
-    area: number
+    idJardin: string;
+    nom: string;
+    surface: number;
+    hauteurMax: number;
+    typeSol: string;
+    ornamentFlag: boolean;
+    vergerFlag : boolean;
+    potagerFlag : boolean;
     parcels: Parcel[];
 }

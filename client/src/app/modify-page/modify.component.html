@@ -5,12 +5,12 @@
 
     <div class="sub-container">
         <div class="table-container">
-            <table *ngFor="let plantType of plantTypes">
+            <table *ngFor="let variete of varietes">
                 <thead>
                     <tr>
                         <th colspan="2">
                             <div style="display:flex; justify-content:space-between;">
-                                {{plantType.name}}
+                                {{variete.name}}
                                 <div class="button-container">
                                     <button>Sauvegarder</button>
                                     <button>Supprimer</button>
@@ -23,55 +23,61 @@
                     <tr>
                         <td>Date de mise en marché</td>
                         <td>
-                            <input type="text" [(ngModel)]="plantType.marketDate">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Biologique</td>
-                        <td>
-                            <input type="text" [(ngModel)]="plantType.isBio">
+                            <input type="text" [(ngModel)]="variete.dateMiseEnMarche">
                         </td>
                     </tr>
                     <tr>
                         <td>Semis</td>
                         <td>
-                            <input type="text" [(ngModel)]="plantType.seedlingDescription">
+                            <input type="text" [(ngModel)]="variete.semis">
                         </td>
                     </tr>
                     <tr>
                         <td>plantation</td>
                         <td>
-                            <input type="text" [(ngModel)]="plantType.plantingDescription">
+                            <input type="text" [(ngModel)]="variete.plantation">
                         </td>
                     </tr>
                     <tr>
-                        <td>maintenance</td>
+                        <td>entretion</td>
                         <td>
-                            <input type="text" [(ngModel)]="plantType.maintenance">
+                            <input type="text" [(ngModel)]="variete.entretion">
                         </td>
                     </tr>
                     <tr>
                         <td>récolte</td>
                         <td>
-                            <input type="text" [(ngModel)]="plantType.harvesting">
+                            <input type="text" [(ngModel)]="variete.recolte">
                         </td>
                     </tr>
                     <tr>
-                        <td>periode de mise en place</td>
+                        <td>debut mise en place</td>
                         <td>
-                            <input type=" text " [(ngModel)]="plantType.establishmentPeriod">
+                            <input type=" text " [(ngModel)]="variete.debutMiseEnPlace">
                         </td>
                     </tr>
                     <tr>
-                        <td>periode de recolte</td>
+                        <td>fin mise en place</td>
                         <td>
-                            <input type="text " [(ngModel)]="plantType.harvestPeriod">
+                            <input type=" text " [(ngModel)]="variete.finMiseEnPlace">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>debut recolte</td>
+                        <td>
+                            <input type=" text " [(ngModel)]="variete.debutRecolte">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>fin recolte</td>
+                        <td>
+                            <input type=" text " [(ngModel)]="variete.finRecolte">
                         </td>
                     </tr>
                     <tr>
                         <td>Commentaire general</td>
                         <td>
-                            <textarea type="text" [(ngModel)]="plantType.comment"></textarea>
+                            <textarea type="text" [(ngModel)]="variete.commentaire"></textarea>
                         </td>
                     </tr>
                 </tbody>

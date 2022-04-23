@@ -7,16 +7,16 @@
         <div class="gardens-container">
             <div *ngFor="let garden of gardens" class="garden-card" (click)="setSelectionAs(garden)">
                 <div>
-                    <h3>{{garden.name}}</h3>
-                    <h4>ID: {{garden._id}}</h4>
-                    <h4>Superficie: {{garden.area}} m2</h4>
+                    <h3>{{garden.nom}}</h3>
+                    <h4>ID: {{garden.idJardin}}</h4>
+                    <h4>Superficie: {{garden.surface}} m2</h4>
                 </div>
 
             </div>
         </div>
         <div class="info-container">
             <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 20px;">
-                <p class="garden-info-title">{{selectedGarden.name}}</p>
+                <p class="garden-info-title">{{selectedGarden.nom}}</p>
             </div>
 
 

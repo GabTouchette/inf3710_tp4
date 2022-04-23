@@ -1,8 +1,8 @@
-import { PlantType } from './plant-type.interface';
+import { Variete } from './variete.interface';
 
 export interface Row {
     number: number;
     coords: number[];
     fallowPeriod: Date[];
-    plantTypes?: PlantType[];
+    varietes: Variete[];
 }
