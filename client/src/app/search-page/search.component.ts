@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Plant } from "../../../../common/interfaces/plant.interface";
+import { CommunicationService } from "../communication.service";
 
 @Component({
   selector: "app-gardens",
@@ -11,18 +12,33 @@ export class Search implements OnInit {
   plants: Plant[];
   plantsWithFilter: Plant[];
 
-  public constructor() {}
+  public constructor(private communicationService: CommunicationService) {}
 
   public ngOnInit(): void {
-    this.plants = [];
-    this.plantsWithFilter = this.plants;
+    this.plants= [];
+    // this.plants=this.plantsWithFilter;
+
+    this.plantsWithFilter = [];
+
+    this.communicationService.getPlants(this.searchFilter).subscribe(plants => this.plantsWithFilter = plants);
+
+
+
   }
 
   public applySearchFilter() {
-    if (this.searchFilter !== "") {
-      this.plantsWithFilter = this.plants.filter((plant: Plant) =>
-        plant.nom.includes(this.searchFilter)
-      );
-    } else this.plantsWithFilter = this.plants;
+
+    // this solutions doesn't use SQL commands
+
+        // if (this.searchFilter !== "") {
+        //   this.plantsWithFilter = this.plants.filter((plant: Plant) =>
+        //     plant.nom.includes(this.searchFilter)
+        //   );
+        // } else this.plantsWithFilter = this.plants;
+
+    //this one does
+    this.communicationService.getPlants(this.searchFilter).subscribe(plants => this.plantsWithFilter = plants);
+
+
   }
 }

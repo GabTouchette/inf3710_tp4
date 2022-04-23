@@ -41,27 +41,51 @@ export class CommunicationService {
       .get<Plant[]>(this.BASE_URL + "/plante", options)
       .pipe(catchError(this.handleError<Plant[]>("getPlants")));
   }
-// ajouter variete
-    public addVariete(variete: Variete): Observable<Plant[]> {
 
-      return this.http
-        .post<Plant[]>(this.BASE_URL + "/variete", variete)
-        .pipe(catchError(this.handleError<Plant[]>("addVariete")));
+  public getVarietes(): Observable<Variete[]> {
 
-    }
+   //  const options = name ?
+   // { params: new HttpParams().set('name', name) } : {};
 
-
-  public modifyVariete(variete: Variete): Observable<number> {
     return this.http
-      .put<number>(this.BASE_URL + "/variete", variete)
-      .pipe(catchError(this.handleError<number>("insertVariete")));
+      .get<Variete[]>(this.BASE_URL + "/variete")
+      .pipe(catchError(this.handleError<Variete[]>("getVarietes")));
   }
 
+// ajouter variete
+  public addVariete(variete: Variete): Observable<any> {
+    console.log(this.BASE_URL + "/variete",);
+    // to fix !
+    return this.http
+      .post<any>(this.BASE_URL + "/variete",  variete) //{ params: new HttpParams().set('name', variete.name) })
+      .pipe(catchError(this.handleError<any>("insertVariete"))) //this.handleError<Plant[]>("addVariete")
+
+  }
+
+  public modifyVariete(variete: Variete): Observable<number> {
+    // to fix !
+    console.log(variete);
+
+    return this.http
+      .put<number>(this.BASE_URL + "/variete", variete)
+      .pipe(catchError(this.handleError<number>("modifyVariete")));
+  }
+
+  public deleteVariete(variete: Variete): Observable<number> {
+    // to fix !
+    console.log(variete);
+
+    return this.http
+      .delete<number>(this.BASE_URL +`/variete`, { params: new HttpParams().set('name', variete.name) }) //  ?name=$
+      .pipe(catchError(this.handleError<number>("modifyVariete")));
+  }
 
   private handleError<T>(
     request: string,
     result?: T
   ): (error: Error) => Observable<T> {
+    console.log("error");
+
     return (error: Error): Observable<T> => {
       return of(result as T);
     };

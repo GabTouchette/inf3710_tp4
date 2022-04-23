@@ -21,7 +21,7 @@ export class DatabaseService {
   //     semis: string, plantation: string, entretion: string,
   //     recolte: string, establishmentPeriod: string, harvestPeriod: string, commentaire: string): Promise<pg.QueryResult> {
   //   const client = await this.pool.connect();
-  // 
+  //
   //   let toUpdateValues = [];
   //
   //   if (name.length > 0) toUpdateValues.push(`nom = '${name}'`);
@@ -101,6 +101,7 @@ export class DatabaseService {
 
     const query = `INSERT INTO jardincommunautaire.variete (${names.join(", ")}) VALUES ('${values.join("', '")}');`;
 
+    console.log(query);
 
 
     const client = await this.pool.connect();
@@ -158,13 +159,12 @@ export class DatabaseService {
       SET (${names.join(", ")})
       WHERE nom= '${name}';`;
 
-
+    console.log(query);
     const client = await this.pool.connect();
     const res = await client.query(query);
     client.release()
     return res;
   }
-
 
   public async deleteVariete(name: string): Promise<pg.QueryResult> {
     if (name.length === 0) throw new Error("Invalid delete query");
@@ -199,16 +199,27 @@ export class DatabaseService {
   }
 
 // jardins
-public async getJardins(): Promise<pg.QueryResult> {
+    public async getJardins(): Promise<pg.QueryResult> {
 
-  let queryText = 'SELECT * FROM jardincommunautaire.Jardins;';
+      let queryText = 'SELECT * FROM jardincommunautaire.Jardins;';
+      console.log(queryText);
+      const client = await this.pool.connect();
+      const res = await client.query(queryText);
+      client.release()
+      return res;
 
-  const client = await this.pool.connect();
-  const res = await client.query(queryText);
-  client.release()
-  return res;
+    }
+    // delete variete
+    public async deleteVariete(name: string): Promise<pg.QueryResult> {
 
-}
+      let queryText = `DELETE FROM jardincommunautaire.Variete WHERE nom= '${name}';`;
+      console.log(queryText);
 
+      const client = await this.pool.connect();
+      const res = await client.query(queryText);
+      client.release()
+      return res;
+
+    }
 
 }

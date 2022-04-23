@@ -17,8 +17,20 @@
         <div class="info-container">
             <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 20px;">
                 <p class="garden-info-title">{{selectedGarden.nom}}</p>
-            </div>
 
+
+
+            </div>
+            <div class="">
+                            <h4>ID: {{selectedGarden.idJardin}}</h4>
+                            <h4>Superficie: {{selectedGarden.surface}} m2</h4>
+                            <h4>hauteurMax: {{selectedGarden.hauteurMax}}</h4>
+                            <h4>typeSol: {{selectedGardenselectedGarden.typeSol}} m2</h4>
+                            <h4>ornamentFlag: {{selectedGarden.ornamentFlag ? 'True' : 'False'}}</h4>
+                            <h4>vergerFlag: {{selectedGarden.vergerFlag  ? 'True' : 'False'}} m2</h4>
+                            <h4>potagerFlag: {{selectedGarden.potagerFlag  ? 'True' : 'False'}}</h4>
+
+            </div>
 
             <div *ngFor="let parcel of selectedGarden.parcels" style="padding: 10px 15px; border-top: 4px solid;">
                 <p class="parcel-title">Parcelle</p>

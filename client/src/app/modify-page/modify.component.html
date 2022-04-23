@@ -12,8 +12,8 @@
                             <div style="display:flex; justify-content:space-between;">
                                 {{variete.name}}
                                 <div class="button-container">
-                                    <button>Sauvegarder</button>
-                                    <button>Supprimer</button>
+                                    <button (click)= "modifyVariete(variete)">Sauvegarder</button>
+                                    <button (click)= "deleteVariete(variete)">Supprimer</button>
                                 </div>
                             </div>
                         </th>

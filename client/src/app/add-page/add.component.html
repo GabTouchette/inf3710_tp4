@@ -9,67 +9,74 @@
                 <tr>
                     <th colspan="2">
                         <div style="display:flex; justify-content:space-between;">
-                            <input class="title-input" type="text" [(ngModel)]="newPlantType.name">
-                            <button>Sauvegarder</button>
+                            <input class="title-input" type="text" [(ngModel)]="newVariete.name">
+                            <button (click)="addVariete()" >Sauvegarder</button>
                         </div>
                     </th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Date de mise en marché</td>
-                    <td>
-                        <input type="text" [(ngModel)]="newPlantType.marketDate">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Biologique</td>
-                    <td>
-                        <input type="text" [(ngModel)]="newPlantType.isBio">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Semis</td>
-                    <td>
-                        <input type="text" [(ngModel)]="newPlantType.seedlingDescription">
-                    </td>
-                </tr>
-                <tr>
-                    <td>plantation</td>
-                    <td>
-                        <input type="text" [(ngModel)]="newPlantType.plantingDescription">
-                    </td>
-                </tr>
-                <tr>
-                    <td>maintenance</td>
-                    <td>
-                        <input type="text" [(ngModel)]="newPlantType.maintenance">
-                    </td>
-                </tr>
-                <tr>
-                    <td>récolte</td>
-                    <td>
-                        <input type="text" [(ngModel)]="newPlantType.harvesting">
-                    </td>
-                </tr>
-                <tr>
-                    <td>periode de mise en place</td>
-                    <td>
-                        <input type=" text " [(ngModel)]="newPlantType.establishmentPeriod">
-                    </td>
-                </tr>
-                <tr>
-                    <td>periode de recolte</td>
-                    <td>
-                        <input type="text " [(ngModel)]="newPlantType.harvestPeriod">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Commentaire general</td>
-                    <td>
-                        <textarea type="text" [(ngModel)]="newPlantType.comment"></textarea>
-                    </td>
-                </tr>
+
+                  <tr>
+                      <td>Date de mise en marché</td>
+                      <td>
+                          <input type="text" [(ngModel)]="newVariete.dateMiseEnMarche">
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>Semis</td>
+                      <td>
+                          <input type="text" [(ngModel)]="newVariete.semis">
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>plantation</td>
+                      <td>
+                          <input type="text" [(ngModel)]="newVariete.plantation">
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>entretion</td>
+                      <td>
+                          <input type="text" [(ngModel)]="newVariete.entretion">
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>récolte</td>
+                      <td>
+                          <input type="text" [(ngModel)]="newVariete.recolte">
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>debut mise en place</td>
+                      <td>
+                          <input type=" text " [(ngModel)]="newVariete.debutMiseEnPlace">
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>fin mise en place</td>
+                      <td>
+                          <input type=" text " [(ngModel)]="newVariete.finMiseEnPlace">
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>debut recolte</td>
+                      <td>
+                          <input type=" text " [(ngModel)]="newVariete.debutRecolte">
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>fin recolte</td>
+                      <td>
+                          <input type=" text " [(ngModel)]="newVariete.finRecolte">
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>Commentaire general</td>
+                      <td>
+                          <textarea type="text" [(ngModel)]="newVariete.commentaire"></textarea>
+                      </td>
+                  </tr>
             </tbody>
         </table>
     </div>

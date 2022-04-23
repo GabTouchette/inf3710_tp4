@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Variete } from "../../../../common/interfaces/variete.interface";
+import { CommunicationService } from "../communication.service";
 
 @Component({
   selector: "app-add",
@@ -9,10 +10,13 @@ import { Variete } from "../../../../common/interfaces/variete.interface";
 export class Add implements OnInit {
   newVariete: Variete;
 
-  public constructor() {}
+  public constructor(private communicationService: CommunicationService) {}
 
   public ngOnInit(): void {
-    this.newVariete = {
+
+
+
+    this.newVariete={
       name: '',
       dateMiseEnMarche: new Date(),
       semis: '',
@@ -27,6 +31,9 @@ export class Add implements OnInit {
     };
   }
 
-  public applySearchFilter() {
+  public addVariete() {
+
+      console.log(this.newVariete);
+      this.communicationService.addVariete(this.newVariete);
   }
 }

@@ -59,6 +59,7 @@ export class DatabaseController {
         var debutRecolte = req.query.debutRecolte ? req.query.debutRecolte : "";
         var finRecolte = req.query.finRecolte ? req.query.finRecolte : "";
         var commentaire = req.query.commentaire ? req.query.commentaire : "";
+        console.log("modifying variete");
 
         this.databaseService
           .updateVariete(name, dateMiseEnMarche, semis,
@@ -93,6 +94,8 @@ export class DatabaseController {
         var finRecolte = req.query.finRecolte ? req.query.finRecolte : "";
         var commentaire = req.query.commentaire ? req.query.commentaire : "";
 
+        console.log("here");
+
         this.databaseService
           .createVariete(name, dateMiseEnMarche, semis,
             plantation, entretion, recolte,
@@ -101,7 +104,37 @@ export class DatabaseController {
              commentaire)
           .then((result: pg.QueryResult) => {
 
-            res.json("Added Row!");
+            res.json(1);
+          })
+          .catch((e: Error) => {
+            console.error(e.stack);
+            res.json(-1);
+          });
+      }
+    );
+
+    router.get(
+      "/variete", (req: Request, res: Response, _: NextFunction) => {
+
+        console.log("getting varieties");
+
+        this.databaseService
+          .getVarietes()
+          .then((result: pg.QueryResult) => {
+            const gardens: Variete[] = result.rows.map((variete: Variete) => ({
+              name: variete.name,
+              dateMiseEnMarche: variete.dateMiseEnMarche,
+              semis: variete.semis,
+              plantation: variete.plantation,
+              entretion: variete.entretion,
+              recolte: variete.recolte,
+              debutMiseEnPlace: variete.debutMiseEnPlace,
+              finMiseEnPlace: variete.finMiseEnPlace,
+              debutRecolte: variete.debutRecolte,
+              finRecolte: variete.finRecolte,
+              commentaire: variete.commentaire
+            }));
+            res.json(1);
           })
           .catch((e: Error) => {
             console.error(e.stack);
@@ -136,6 +169,21 @@ export class DatabaseController {
         });
     });
 
+    router.delete("/variete", (req: Request, res: Response, _: NextFunction) => {
+
+
+      var name = req.query.name ? req.query.name : "";
+      console.log("deleting variety");
+
+      this.databaseService
+      .deleteVariete(name)
+        .then((result: pg.QueryResult) => {
+          res.json(1);
+        })
+        .catch((e: Error) => {
+          console.error(e.stack);
+        });
+    });
 
     return router;
   }
