@@ -3,7 +3,7 @@ import { inject, injectable } from "inversify";
 import * as pg from "pg";
 
 
-// import { Variete } from "../../../common/interfaces/variete.interface";
+import { Variete } from "../../../common/interfaces/variete.interface";
 import { Garden } from "../../../common/interfaces/garden.interface";
 import { Plant } from "../../../common/interfaces/plant.interface";
 
@@ -68,7 +68,6 @@ export class DatabaseController {
             debutRecolte, finRecolte,
              commentaire)
           .then((result: pg.QueryResult) => {
-
             res.json("Added Row!");
           })
           .catch((e: Error) => {
@@ -121,7 +120,7 @@ export class DatabaseController {
         this.databaseService
           .getVarietes()
           .then((result: pg.QueryResult) => {
-            const gardens: Variete[] = result.rows.map((variete: Variete) => ({
+            const varietes: Variete[] = result.rows.map((variete: Variete) => ({
               name: variete.name,
               dateMiseEnMarche: variete.dateMiseEnMarche,
               semis: variete.semis,
@@ -134,7 +133,7 @@ export class DatabaseController {
               finRecolte: variete.finRecolte,
               commentaire: variete.commentaire
             }));
-            res.json(1);
+            res.json(varietes);
           })
           .catch((e: Error) => {
             console.error(e.stack);

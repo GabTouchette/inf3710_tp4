@@ -209,10 +209,10 @@ export class DatabaseService {
       return res;
 
     }
-    // delete variete
-    public async deleteVariete(name: string): Promise<pg.QueryResult> {
+    // get variete
+    public async getVarietes(): Promise<pg.QueryResult> {
 
-      let queryText = `DELETE FROM jardincommunautaire.Variete WHERE nom= '${name}';`;
+      let queryText = `SELECT * FROM jardincommunautaire.Variete;`;
       console.log(queryText);
 
       const client = await this.pool.connect();
